@@ -51,7 +51,7 @@ func (c *ClientHTTP) Get(id string) (*domain.Course, error) {
 	}
 
 	if err := resp.FillUp(&dataResponse); err != nil {
-		return nil, fmt.Errorf("%s", resp)
+		return nil, err
 	}
 
 	if resp.StatusCode == 404 {
